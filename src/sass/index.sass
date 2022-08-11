@@ -35,6 +35,7 @@ a
 .header
 	position: relative
 	background: #fff
+	z-index: 1
 
 .top-menu
 	height: rem(70)
@@ -48,6 +49,9 @@ a
 		display: flex
 		justify-content: flex-end
 		align-items: center
+
+		@include media(558)
+			justify-content: center
 
 	&__li
 		position: relative
@@ -115,24 +119,37 @@ a
 	opacity: 0
 	transition-duration: 300ms
 
+	@include media(558)
+		transform: translateX(calc(50% - 35px))
+
 	&__ul
 		background: #fff
 		padding: rem(20)
 		display: grid
-		min-width: rem(340)
+		min-width: rem(400)
 		//height: rem(440)
-		grid-template-columns: 1fr 1fr 1fr
+		grid-template-columns: 33.33% 33.33% 33.33%
 		//overflow-y: auto
+
+		@include media(558)
+			min-width: rem(300)
 
 		&:before
 			content: ''
 			position: absolute
-			top: rem(-7)
-			right: rem(13)
-			width: rem(20)
-			height: rem(20)
-			background: #fff
-			transform: rotate(45deg)
+			top: rem(-30)
+			right: rem(7)
+			//width: rem(20)
+			//height: rem(20)
+			//background: #fff
+			//transform: rotate(45deg)
+			border: 15px solid transparent
+			border-bottom: 15px solid #fff
+
+			@include media(558)
+				right: 0
+				transform: translateX(rem(-123))
+
 
 	&__li
 		list-style-type: none
@@ -166,9 +183,14 @@ a
 				display: block
 
 		&:checked ~ .products__ul
-			min-width: rem(357)
-			height: rem(389)
+			min-width: rem(417)
+			height: rem(400)
 			overflow-y: auto
+
+			@include media(558)
+				height: rem(368)
+				width: rem(300)
+				min-width: rem(300)
 
 		&:checked ~ .products__btn .products__box:after
 			content: 'Less'
