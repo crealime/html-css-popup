@@ -1,0 +1,19 @@
+$em: 16
+$rem: 16
+
+@use "sass:math"
+
+@function em($px, $base: $em)
+	@return math.div($px, $em) + em
+
+@function rem($px)
+	@return math.div($px, $rem) + rem
+
+@mixin media($screen)
+	@media only screen and (max-width : $screen + px)
+		@content
+
+@mixin mediam($screen)
+	@media only screen and (min-width : $screen + px)
+		@content
+
