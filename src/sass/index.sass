@@ -4,232 +4,230 @@
 @import "mixins"
 
 html
-	font-size: 16px
-	overflow-x: hidden
+  font-size: 16px
+  overflow-x: hidden
 
-	@include media(558)
-		font-size: 14px
+  @include media(558)
+    font-size: 14px
 
 body
-	background-color: $color-bg
-	font-family: $font-prime, sans-serif
-	font-size: rem(16)
-	font-weight: 400
+  background-color: $color-bg
+  font-family: $font-prime, sans-serif
+  font-size: rem(16)
+  font-weight: 400
 
 *
-	box-sizing: border-box
+  box-sizing: border-box
 
 a
-	color: $color-prime
-	text-decoration: none
+  color: $color-prime
+  text-decoration: none
 
-	&:hover, &:focus
-		color: $color-second
+  &:hover, &:focus
+    color: $color-second
 
-	&:focus
-		outline: none
+  &:focus
+    outline: none
 
 .wrapper
-	display: flex
-	flex-direction: column
-	justify-content: space-between
-	min-height: 100vh
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  min-height: 100vh
 
 .header
-	position: relative
-	background: #fff
-	z-index: 1
+  position: relative
+  background: #fff
+  z-index: 1
 
 .top-menu
-	height: rem(70)
-	padding: 0 rem(20)
+  height: rem(70)
+  padding: 0 rem(20)
 
-	&__nav
-		height: inherit
+  &__nav
+    height: inherit
 
-	&__ul
-		height: inherit
-		display: flex
-		justify-content: flex-end
-		align-items: center
+  &__ul
+    height: inherit
+    display: flex
+    justify-content: flex-end
+    align-items: center
 
-		@include media(558)
-			justify-content: center
+    @include media(558)
+      justify-content: center
 
-	&__li
-		position: relative
-		list-style-type: none
-		margin-right: rem(10)
+  &__li
+    position: relative
+    list-style-type: none
+    margin-right: rem(10)
 
-		&:last-child
-			margin-right: 0
+    &:last-child
+      margin-right: 0
 
-	&__link
-		display: block
-		padding: rem(7) rem(10)
-		border: solid 1px rgba($color-prime, 0)
-		border-radius: rem(4)
-		transition-duration: 300ms
+  &__link
+    display: block
+    padding: rem(7) rem(10)
+    border: solid 1px rgba($color-prime, 0)
+    border-radius: rem(4)
+    transition-duration: 300ms
 
-		&:focus
-			border: solid 1px lighten($color-prime, 50%)
+    &:focus
+      border: solid 1px lighten($color-prime, 50%)
 
-	&__icon
-		width: rem(24)
-		height: rem(24)
-		object-fit: cover
+  &__icon
+    width: rem(24)
+    height: rem(24)
+    object-fit: cover
 
-	&__avatar
-		width: rem(36)
-		height: rem(36)
-		object-fit: cover
-		border-radius: 50%
+  &__avatar
+    width: rem(36)
+    height: rem(36)
+    object-fit: cover
+    border-radius: 50%
 
-	&__label
-		display: block
-		cursor: pointer
+  &__label
+    display: block
+    cursor: pointer
 
-	&__input
-		position: absolute
-		appearance: none
+  &__input
+    position: absolute
+    appearance: none
 
-		&:focus
-			~ .top-menu__label .top-menu__icon-box
-				border: solid 1px lighten($color-prime, 50%)
+    &:focus
+      ~ .top-menu__label .top-menu__icon-box
+        border: solid 1px lighten($color-prime, 50%)
 
-		&:checked ~ .products
-			visibility: visible
-			opacity: 1
-			pointer-events: auto
+    &:checked ~ .products
+      visibility: visible
+      opacity: 1
+      pointer-events: auto
 
-	&__icon-box
-		display: block
-		border: solid 1px rgba($color-prime, 0)
-		border-radius: rem(4)
-		padding: rem(7) rem(10)
+  &__icon-box
+    display: block
+    border: solid 1px rgba($color-prime, 0)
+    border-radius: rem(4)
+    padding: rem(7) rem(10)
 
-	&__icon
-		width: rem(24)
-		height: rem(24)
-		object-fit: cover
+  &__icon
+    width: rem(24)
+    height: rem(24)
+    object-fit: cover
 
 .products
-	position: absolute
-	top: rem(70)
-	right: 0
-	visibility: hidden
-	pointer-events: none
-	opacity: 0
-	transition-duration: 300ms
-	z-index: 2
+  position: absolute
+  top: rem(70)
+  right: 0
+  visibility: hidden
+  pointer-events: none
+  opacity: 0
+  transition-duration: 300ms
+  z-index: 2
 
-	@include media(558)
-		transform: translateX(calc(50% - 35px))
+  @include media(558)
+    transform: translateX(calc(50% - 35px))
 
-	&__ul
-		background: #fff
-		padding: rem(20)
-		display: grid
-		min-width: rem(400)
-		//height: rem(440)
-		grid-template-columns: 33.33% 33.33% 33.33%
-		//overflow-y: auto
+  &__ul
+    background: #fff
+    padding: rem(20)
+    display: grid
+    min-width: rem(400)
+    //height: rem(440)
+    grid-template-columns: 33.33% 33.33% 33.33%
+    //overflow-y: auto
 
-		@include media(558)
-			min-width: rem(320)
+    @include media(558)
+      min-width: rem(320)
 
-		&:before
-			content: ''
-			position: absolute
-			top: rem(-28)
-			right: rem(7)
-			//width: rem(20)
-			//height: rem(20)
-			//background: #fff
-			//transform: rotate(45deg)
-			border: 15px solid transparent
-			border-bottom: 15px solid #fff
-			z-index: -1
+    &:before
+      content: ''
+      position: absolute
+      top: rem(-28)
+      right: rem(7)
+      //width: rem(20)
+      //height: rem(20)
+      //background: #fff
+      //transform: rotate(45deg)
+      border: 15px solid transparent
+      border-bottom: 15px solid #fff
+      z-index: -1
 
-			@include media(558)
-				right: 0
-				transform: translateX(rem(-127))
+      @include media(558)
+        right: 0
+        transform: translateX(rem(-127))
 
+  &__li
+    list-style-type: none
 
-	&__li
-		list-style-type: none
+    &:nth-child(n+10)
+      display: none
 
-		&:nth-child(n+10)
-			display: none
+  &__link
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    padding: rem(10)
+    border: solid 1px rgba($color-prime, 0)
+    transition-duration: 300ms
 
-	&__link
-		height: 100%
-		display: flex
-		flex-direction: column
-		justify-content: space-between
-		align-items: center
-		padding: rem(10)
-		border: solid 1px rgba($color-prime, 0)
-		transition-duration: 300ms
+    &:focus
+      border: solid 1px lighten($color-prime, 60%)
 
-		&:focus
-			border: solid 1px lighten($color-prime, 60%)
-		
-	&__icon
-		max-width: 100%
-		max-height: rem(70)
-		margin-bottom: rem(10)
+  &__icon
+    max-width: 100%
+    max-height: rem(70)
+    margin-bottom: rem(10)
 
-	&__input
-		position: absolute
-		appearance: none
+  &__input
+    position: absolute
+    appearance: none
 
-		&:checked ~ .products__ul .products__li:nth-child(n+10)
-				display: block
+    &:checked ~ .products__ul .products__li:nth-child(n+10)
+      display: block
 
-		&:checked ~ .products__ul
-			min-width: rem(417)
-			height: rem(400)
-			overflow-y: auto
+    &:checked ~ .products__ul
+      min-width: rem(417)
+      height: rem(400)
+      overflow-y: auto
 
-			@include media(558)
-				height: rem(388)
-				width: rem(320)
-				min-width: rem(320)
+      @include media(558)
+        height: rem(388)
+        width: rem(320)
+        min-width: rem(320)
 
-		&:checked ~ .products__btn .products__box:after
-			content: 'Less'
+    &:checked ~ .products__btn .products__box:after
+      content: 'Less'
 
-		&:focus  ~ .products__btn .products__box
-			background: lighten($color-prime, 50%)
+    &:focus ~ .products__btn .products__box
+      background: lighten($color-prime, 50%)
 
-	&__box
-		display: block
-		position: relative
-		width: 100%
-		height: rem(40)
-		background: lighten($color-prime, 60%)
-		cursor: pointer
-		transition-duration: 300ms
+  &__box
+    display: block
+    position: relative
+    width: 100%
+    height: rem(40)
+    background: lighten($color-prime, 60%)
+    cursor: pointer
+    transition-duration: 300ms
 
-		&:hover, &:focus
-			background: lighten($color-prime, 50%)
+    &:hover, &:focus
+      background: lighten($color-prime, 50%)
 
-		&:after
-			position: absolute
-			top: 50%
-			left: 50%
-			content: 'More'
-			transform: translateY(-50%) translateX(-50%)
-
+    &:after
+      position: absolute
+      top: 50%
+      left: 50%
+      content: 'More'
+      transform: translateY(-50%) translateX(-50%)
 
 .footer
-	position: relative
-	height: rem(50)
-	display: flex
-	justify-content: center
-	align-items: center
-	font-size: rem(14)
-	background-color: darken($color-bg, 20%)
-	color: #fff
+  position: relative
+  height: rem(50)
+  display: flex
+  justify-content: center
+  align-items: center
+  font-size: rem(14)
+  background-color: darken($color-bg, 20%)
+  color: #fff
 
