@@ -189,11 +189,17 @@ a
     position: absolute
     appearance: none
 
+    &:checked
+      display: none
+
     &:checked ~ .inner-menu__ul_in
       display: grid
 
-    &:checked ~ .inner-menu__btn .inner-menu__box:after
-      content: 'Less'
+    &:checked ~ .inner-menu__btn
+      display: none
+
+    //&:checked ~ .inner-menu__btn .inner-menu__box:after
+    //  content: 'Less'
 
     &:focus ~ .inner-menu__btn .inner-menu__box
       background: lighten($color-prime, 50%)
