@@ -45,7 +45,7 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			// Hash in css file name
 			// filename: '[name].[contenthash].css'
-			filename: 'css/[name].css'
+			filename: 'css/[name].css',
 		}),
 		new CopyPlugin({
 			patterns: [
