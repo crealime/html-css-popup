@@ -70,11 +70,14 @@ module.exports = {
 							postcssOptions: {
 								plugins: [
 									[
-										'postcss-preset-env',
-										{
-											// Options
-										}
-									]
+										'postcss-combine-media-query',
+									],
+									// [
+									// 	'postcss-preset-env',
+									// 	{
+									// 		// Options
+									// 	}
+									// ],
 								]
 							}
 						}

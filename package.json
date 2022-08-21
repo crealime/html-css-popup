@@ -30,6 +30,7 @@
 		"html-webpack-plugin": "^5.5.0",
 		"mini-css-extract-plugin": "^2.6.0",
 		"postcss": "^8.4.14",
+		"postcss-combine-media-query": "^1.0.1",
 		"postcss-loader": "^7.0.0",
 		"postcss-preset-env": "^7.7.1",
 		"pug": "^2.0.4",
