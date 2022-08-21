@@ -68,12 +68,12 @@ a
   &__link
     display: block
     padding: rem(7) rem(10)
-    border: $brd-hidden
+    border: solid 1px transparent
     border-radius: rem(4)
     transition-duration: 300ms
 
     &:focus
-      border: $brd-visible
+      border: solid 1px lighten($color-prime, 50%)
 
   &__icon
     width: rem(24)
@@ -89,7 +89,7 @@ a
   &__label
     display: block
     cursor: pointer
-    border: $brd-hidden
+    border: solid 1px transparent
     border-radius: rem(4)
     padding: rem(7) rem(10)
 
@@ -99,7 +99,7 @@ a
 
     &:focus
       ~ .top-menu__label
-        border: $brd-visible
+        border: solid 1px lighten($color-prime, 50%)
 
     &:checked ~ .inner-menu
       visibility: visible
@@ -128,12 +128,8 @@ a
     background: #fff
     padding: rem(20)
     display: grid
-    grid-row-gap: rem(20)
     min-width: rem(400)
-    max-height: rem(600)
-    //grid-template-columns: repeat(3, 1fr)
-    grid-template-columns: 33.3% 33.3% 33.3%
-    overflow-y: auto
+    grid-template-columns: repeat(3, 1fr)
 
     @include media(576)
       min-width: rem(320)
@@ -151,21 +147,11 @@ a
         right: calc(50% - 30px)
         //transform: translateX(rem(-127))
 
-    &_in
-      padding: 0
-      display: none
-      overflow-y: visible
-      height: auto
-
   &__li
     list-style-type: none
-    //height: rem(130)
 
-    //&:nth-child(n+10)
-    //  display: none
-
-    &_in
-      grid-area: 4 / 1 / 5 / 4
+    &:nth-child(n+10)
+      display: none
 
   &__link
     height: 100%
@@ -174,7 +160,7 @@ a
     justify-content: space-between
     align-items: center
     padding: rem(10)
-    border: $brd-hidden
+    border: solid 1px transparent
     transition-duration: 300ms
 
     &:focus
@@ -189,8 +175,13 @@ a
     position: absolute
     appearance: none
 
-    &:checked ~ .inner-menu__ul_in
-      display: grid
+    &:checked ~ .inner-menu__ul .inner-menu__li:nth-child(n+10)
+      display: block
+
+    &:checked ~ .inner-menu__ul
+      min-width: rem(417)
+      height: rem(400)
+      overflow-y: auto
 
     &:checked ~ .inner-menu__btn .inner-menu__box:after
       content: 'Less'
@@ -201,7 +192,6 @@ a
   &__box
     display: block
     position: relative
-    margin-top: rem(10)
     height: rem(40)
     background: lighten($color-prime, 60%)
     cursor: pointer
