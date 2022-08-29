@@ -1,4 +1,4 @@
-# HTML & CSS Practice
+# HTML & CSS Practice | Kottans
 
 ## Hooli-style Popup
 
